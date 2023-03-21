@@ -7,6 +7,10 @@
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>
 
+/// <summary>
+/// JSON을 파싱해서 단순히 텍스트로 출력하는 함수
+/// </summary>
+/// <param name="filePath">json 파일 경로</param>
 void LoadJson(std::wstring& filePath)
 {
 	const wchar_t* path = filePath.c_str();
@@ -40,8 +44,9 @@ void LoadJson(std::wstring& filePath)
 
 int main()
 {
-	std::wcout.imbue(std::locale(""));
+	std::wcout.imbue(std::locale("korean"));
 
+	// ini 파일로 부터 경로를 가져온다.
 	wchar_t path[256] = { 0 };
 	DWORD size = GetPrivateProfileString(L"JSON", L"directory", L"", path, 256, L"./filePath.ini");
 	if (size == 0)
