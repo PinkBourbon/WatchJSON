@@ -13,6 +13,7 @@
 /// <param name="filePath">json 파일 경로</param>
 void LoadJson(std::wstring& filePath)
 {
+	// 테스트용 주석
 	const wchar_t* path = filePath.c_str();
 	std::wifstream inputStream;
 	inputStream.open(path);
